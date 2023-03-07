@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: CI
 
 on:
   push:
@@ -13,7 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Download Eigen
+      run: |
+      wget https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz
+      tar -xvzf eigen-3.4.0.tar.gz
+
+    - name: Download Doctest
+      run: wget https://raw.githubusercontent.com/doctest/doctest/master/doctest/doctest.h
+
     - name: Run make
-      run: make all
+      run: make INCLUDES="-I ./eigen-3.4.0" test
+
     - name: Run Tests
       run: ./build/test -s

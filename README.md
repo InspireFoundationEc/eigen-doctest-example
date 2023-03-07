@@ -1,5 +1,7 @@
 # eigen-doctest-example
 
+[![CI](https://github.com/InspireFoundationEc/eigen-doctest-example/actions/workflows/CI.yml/badge.svg)](https://github.com/InspireFoundationEc/eigen-doctest-example/actions/workflows/CI.yml)
+
 This example repo shows how to write unit tests for a program that uses Eigen.
 
 ## Pre-requirements
