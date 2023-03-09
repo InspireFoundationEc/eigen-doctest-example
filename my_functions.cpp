@@ -7,10 +7,6 @@ using Eigen::MatrixXd;
 
 MatrixXd get_identity_matrix(MatrixXd m)
 {
-  MatrixXd result = MatrixXd::Zero(m.rows(), m.cols());
-  for (int i = 0; i < m.rows(); i++)
-  {
-    result(i, i) = 1;
-  }
+  MatrixXd result = MatrixXd::Identity(m.rows(), m.cols());
   return result;
 }
